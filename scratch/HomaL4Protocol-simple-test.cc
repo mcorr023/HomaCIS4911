@@ -41,6 +41,11 @@ using namespace ns3;
 
 NS_LOG_COMPONENT_DEFINE ("HomaL4ProtocolSimpleTest");
 
+/******** Get the Sent and Received Times to Calculate Total Time ********/
+
+uint64_t timeSent;
+uint64_t timeReceived;
+
 void
 AppSendTo (Ptr<Socket> senderSocket, 
            Ptr<Packet> appMsg, 
@@ -48,6 +53,8 @@ AppSendTo (Ptr<Socket> senderSocket,
 {
   NS_LOG_FUNCTION(Simulator::Now ().GetNanoSeconds () << 
                   "Sending an application message.");
+                
+  timeSent = Simulator::Now ().GetNanoSeconds ();
     
   int sentBytes = senderSocket->SendTo (appMsg, 0, receiverAddr);
   NS_LOG_INFO(sentBytes << " Bytes sent to " << receiverAddr);
@@ -68,6 +75,8 @@ AppReceive (Ptr<Socket> receiverSocket)
                  InetSocketAddress::ConvertFrom (from).GetIpv4 () << " port " <<
                  InetSocketAddress::ConvertFrom (from).GetPort ());
   }
+
+  timeReceived = Simulator::Now ().GetNanoSeconds ();
 }
 
 void TraceMsgBegin (Ptr<OutputStreamWrapper> stream,
@@ -203,16 +212,23 @@ main (int argc, char *argv[])
   HomaHeader homah;
   Ipv4Header ipv4h;
     
-  uint32_t payloadSize = senderDevices.Get (1)->GetMtu() 
-                         - homah.GetSerializedSize ()
-                         - ipv4h.GetSerializedSize ();
-  Ptr<Packet> appMsg = Create<Packet> (payloadSize);
+  //uint32_t payloadSize = senderDevices.Get (1)->GetMtu() 
+  //                       - homah.GetSerializedSize ()
+  //                       - ipv4h.GetSerializedSize ();
+
+  /******** Change the Size of the Message to be Sent ********/
+  uint32_t messageSize = 50000 - homah.GetSerializedSize () - ipv4h.GetSerializedSize ();
   
+  Ptr<Packet> appMsg = Create<Packet> (messageSize);
+
   Simulator::Schedule (Seconds (3.0), &AppSendTo, senderSocket, appMsg, receiverAddr);
   receiverSocket->SetRecvCallback (MakeCallback (&AppReceive));
 
   /******** Run the Actual Simulation ********/
   Simulator::Run ();
+
+  NS_LOG_INFO("It took " << timeReceived - timeSent << " nanoseconds to send " << messageSize << " bytes.");
+
   Simulator::Destroy ();
   return 0;
 }

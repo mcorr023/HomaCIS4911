@@ -1,3 +1,16 @@
+Maria Correa Update 4/4/2023:
+
+Updated HomaL4Protocol-simple-test.cc to parse a variable size of the message.
+Updated HomaL4Protocol-simple-test.cc to calculate the time in nanoseconds it takes to send message.
+
+How to run:
+1) git clone https://github.com/mcorr23/HomaCIS4911.git
+2) ./waf configure
+3) ./waf 
+4) Change the size of the message to your liking: line 220 variable name "messageSize" (It accounts for Serialized Size of Homa and ipv4h) 
+5) export NS_LOG=HomaL4ProtocolSimpleTest=info
+5) ./waf --run scratch/HomaL4Protocol-simple-test
+
 Wenjia Update 2/28/2023
 
 How to run this project:
