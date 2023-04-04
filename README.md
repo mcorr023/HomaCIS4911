@@ -11,6 +11,8 @@ How to run:
 5) export NS_LOG=HomaL4ProtocolSimpleTest=info
 5) ./waf --run scratch/HomaL4Protocol-simple-test
 
+<img width="1307" alt="image" src="example.png">
+
 Wenjia Update 2/28/2023
 
 How to run this project:
