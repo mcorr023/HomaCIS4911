@@ -18,8 +18,8 @@ body{
 .container-homa
 {
   position: absolute;
-  top:25%;
-  left: 50%;
+  top:230px;
+  left: 800px;
   transform: translate(-50%,-50%);
   display: block;
   background: #fff;
@@ -40,8 +40,8 @@ body{
 .container2-homa
 {
   position: absolute;
-  top:53%;
-  left: 50%;
+  top: 480px;
+  left: 800px;
   transform: translate(-50%,-50%);
   display: block;
   background: #fff;
@@ -62,8 +62,8 @@ body{
 .homa1
 {
   position: absolute;
-  top:78%;
-  left: 27%;
+  top:700px;
+  left: 400px;
   transform: translate(-50%,-50%);
   display: block;
   background: #7a9ca7;
@@ -84,8 +84,8 @@ body{
 .homa2
 {
   position: absolute;
-  top:79%;
-  left: 50%;
+  top:710px;
+  left: 780px;
   transform: translate(-50%,-50%);
   display: block;
   background: #7aa78e;
@@ -106,8 +106,8 @@ body{
 .homa3
 {
   position: absolute;
-  top:80.3%;
-  left:78%;
+  top:720px;
+  left: 1240px;
   transform: translate(-50%,-50%);
   display: block;
   background: #897aa7;
@@ -129,12 +129,12 @@ body{
   border: 2px solid #ffffff;
   border-radius: 20px;
   color: #ffffff;
-  transition:  all 0.2s ease-in;
+  transition:  all 0.5s ease-in;
 }
 .homa4{
   position: absolute;
-  top:110%;
-  left: 50%;
+  top:950px;
+  left: 800px;
   transform: translate(-50%,-50%);
   display: block;
   background: #fff;
@@ -154,8 +154,8 @@ body{
 
 .homa5{
   position: absolute;
-  top:120%;
-  left: 25%;
+  top:1020px;
+  left: 400px;
   width: 50%;
   border: 2px solid #000000;
 }
@@ -176,7 +176,7 @@ body{
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #8f587e;
+  background-color: #612c51;
 }
 
 .homa5:hover .homaoverlay {
