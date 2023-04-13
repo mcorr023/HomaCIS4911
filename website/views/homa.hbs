@@ -18,8 +18,57 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <h2>Homa</h2>
+    <div class="container-homa">
+      <h2>What is HOMA?</h2>
+      <h4>HOMA is a novel transport protocol (like TCP, UDP, etc…) proposed recently in a paper by by Montazeri, Li, Alizadeh, and Ousterhout 
+        that is specifically designed to dramatically improve the performance of message-passing in
+        networks with a high-volume of small messages. Specifically, HOMA is an attempt to catch up to
+        hardware latency capabilities by exploiting the fact that the vast majority of messages in most network
+        applications is in the range of a few hundred bytes. By addressing this HOMA achieves a speedup of
+        almost 100x in such situations.</h4>
+        <a href="https://people.csail.mit.edu/alizadeh/papers/homa-sigcomm18.pdf">Homa Paper by Montazeri, Li, Alizadeh, and Ousterhout</a>
     </div>
+
+    <div class="container2-homa">
+      <h2>Principles of HOMA design:</h2>
+      <h3>HOMA relies on three main design principles to achieve its goals:</h3>
+    </div>
+    <div class="homa1">
+      <h3>Priority Queues</h3>
+      <h4>◦ HOMA heavily exploits the priority queues present in modern-day network switches by
+          assigning priorities in a highly-efficient and dynamic manner.</h4>
+    </div>
+    <div class="homa2">
+      <h3>Controlled Overcommitment</h3>
+      <h4>◦ HOMA overcommits receiver downlinks in order to make the most efficient use of
+          bandwith possible. This is crucial to reducing queuing, which is one of the main sources of
+          HOMA speed, because it addresses one of the main difficulties that arises with the way
+          HOMA schedules packets.</h4>
+    </div>
+    <div class="homa3">
+      <h3>Connectionless Design</h3>
+      <h4>◦ One of HOMA’s main sources of speed is it’s strong crackdown on queuing times via a
+        dramatic reduction in message latency. A streaming approach (like in TCP) increases
+        message latency, since it necessitates the establishment of a connection. Thus, in order to
+        achieve minimum latency it is necessary to transmit packages “blindly”, i.e. in a
+        connectionless way.</h4>
+    </div>
+
+    <div class="homa4">
+      <h2>How do HOMA principles lower latency?</h2>
+      </div>
+
+    <div class="homa5">
+      <img src="homaimage1.png" alt="Avatar" class="homaimage">
+      <div class="homaoverlay">
+        <div class="homaimagetext">Suppose that you want to send a message using HOMA. The first thing that happens is that the sender
+            transmits the first few bytes of the message you want to send blindly (these bytes also include the
+            message size), this is the unscheduled portion of the message. Once the receiver has the transmitted
+            bytes, it broadcasts a “grant” packet, which lets the sender know that it should send the rest of the
+            message. The message is scheduled “in-network” using the priority queues of the network switches,
+            and the whole process is supported by the higher bandwith utilization acquired with controlled
+            overcommitment.</div>
+      </div>
+    </div>   
   </body>
 </html>

@@ -15,17 +15,185 @@ body{
   background-size: cover;
 }
 
-.container-fluid
+.container-homa
 {
   position: absolute;
-  top:20%;
+  top:25%;
   left: 50%;
   transform: translate(-50%,-50%);
   display: block;
   background: #fff;
-  width: 410px;
   padding: 30px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.container-homa h2,.container-homa h4{
+  font-weight: 400;
+}
+
+.container2-homa
+{
+  position: absolute;
+  top:53%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: #fff;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.container2-homa h2,.container2-homa h3{
+  font-weight: 400;
+}
+
+.homa1
+{
+  position: absolute;
+  top:78%;
+  left: 27%;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: #7a9ca7;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.homa1 h4,.homa1 h3{
+  font-weight: 400;
+}
+
+.homa2
+{
+  position: absolute;
+  top:79%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: #7aa78e;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.homa2 h4,.homa2 h3{
+  font-weight: 400;
+}
+
+.homa3
+{
+  position: absolute;
+  top:80.3%;
+  left:78%;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: #897aa7;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.homa3 h4,.homa3 h3{
+  font-weight: 400;
+}
+.homa3:hover, .homa1:hover, .homa2:hover{
+  text-shadow: 2px 2px 8px #000000;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  transition:  all 0.2s ease-in;
+}
+.homa4{
+  position: absolute;
+  top:110%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: #fff;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+.homa4 h2{
+  font-weight: 400;
+}
+
+.homa5{
+  position: absolute;
+  top:120%;
+  left: 25%;
+  width: 50%;
+  border: 2px solid #000000;
+}
+
+.homaimage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.homaoverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #8f587e;
+}
+
+.homa5:hover .homaoverlay {
+  opacity: 1;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+.homaimagetext {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .container{
