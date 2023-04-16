@@ -196,6 +196,67 @@ body{
   text-align: center;
 }
 
+.TCP_info {
+position: absolute;
+  top:710px;
+  left: 780px;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: #7aa78e;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+
+.tcp_image {
+display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+.HOMA_info {
+position: absolute;
+  top:710px;
+  left: 780px;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: #7aa78e;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+
+.TCP_comparison {
+position: absolute;
+  top:710px;
+  left: 780px;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: #7aa78e;
+  padding: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 20px;
+}
+
+
 .container{
   position: absolute;
   top:50%;
