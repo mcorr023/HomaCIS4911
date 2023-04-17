@@ -1,3 +1,21 @@
+Nathan Nunez Update 4/12/2023:
+
+Updated HomaL4Protocol-simple-test.cc to calculate the time in nanoseconds it takes to send message (fixed an issue in the previous version that would throw an error when TcpL4Protocol-simple-test.cc was run).
+Updated TcpL4Protocol-simple-test.cc to calculate the time in nanoseconds it takes to send message.
+
+How to setup:
+1) git clone https://github.com/mcorr23/HomaCIS4911.git
+2) ./waf configure
+3) ./waf 
+
+How to run HOMA:
+1) Change the size of the message to your liking: line 52 variable name "messageSize"
+2) ./waf --run scratch/HomaL4Protocol-simple-test
+
+How to run TCP:
+1) Change the size of the message to your liking: line 48 variable name "messageSize"
+2) ./waf --run scratch/TcpL4Protocol-simple-test
+
 Maria Correa Update 4/4/2023:
 
 Updated HomaL4Protocol-simple-test.cc to parse a variable size of the message.
