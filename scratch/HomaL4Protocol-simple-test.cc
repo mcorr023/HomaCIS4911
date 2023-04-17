@@ -45,6 +45,11 @@ NS_LOG_COMPONENT_DEFINE ("HomaL4ProtocolSimpleTest");
 
 uint64_t timeSent;
 uint64_t timeReceived;
+uint64_t startTime;
+uint64_t finishTime;
+
+/******** Change the Size of the Message to be Sent ********/
+uint32_t messageSize = 532480;
 
 void
 AppSendTo (Ptr<Socket> senderSocket, 
@@ -83,11 +88,14 @@ void TraceMsgBegin (Ptr<OutputStreamWrapper> stream,
                     Ptr<const Packet> msg, Ipv4Address saddr, Ipv4Address daddr, 
                     uint16_t sport, uint16_t dport, int txMsgId)
 {
-  NS_LOG_DEBUG("+ " << Simulator::Now ().GetNanoSeconds ()
+  /*NS_LOG_DEBUG("+ " << Simulator::Now ().GetNanoSeconds ()
                 << " " << msg->GetSize()
                 << " " << saddr << ":" << sport 
                 << " "  << daddr << ":" << dport 
                 << " " << txMsgId);
+                */
+                
+  startTime = Simulator::Now ().GetNanoSeconds ();    
     
   *stream->GetStream () << "+ " << Simulator::Now ().GetNanoSeconds () 
       << " " << msg->GetSize()
@@ -99,11 +107,14 @@ void TraceMsgFinish (Ptr<OutputStreamWrapper> stream,
                      Ptr<const Packet> msg, Ipv4Address saddr, Ipv4Address daddr, 
                      uint16_t sport, uint16_t dport, int txMsgId)
 {
-  NS_LOG_DEBUG("- " << Simulator::Now ().GetNanoSeconds () 
+  /*NS_LOG_DEBUG("- " << Simulator::Now ().GetNanoSeconds () 
                 << " " << msg->GetSize()
                 << " " << saddr << ":" << sport 
                 << " "  << daddr << ":" << dport 
                 << " " << txMsgId);
+                */
+    
+  finishTime = Simulator::Now ().GetNanoSeconds ();  
     
   *stream->GetStream () << "- " << Simulator::Now ().GetNanoSeconds () 
       << " " << msg->GetSize()
@@ -215,9 +226,6 @@ main (int argc, char *argv[])
   //uint32_t payloadSize = senderDevices.Get (1)->GetMtu() 
   //                       - homah.GetSerializedSize ()
   //                       - ipv4h.GetSerializedSize ();
-
-  /******** Change the Size of the Message to be Sent ********/
-  uint32_t messageSize = 50000 - homah.GetSerializedSize () - ipv4h.GetSerializedSize ();
   
   Ptr<Packet> appMsg = Create<Packet> (messageSize);
 
@@ -230,5 +238,8 @@ main (int argc, char *argv[])
   NS_LOG_INFO("It took " << timeReceived - timeSent << " nanoseconds to send " << messageSize << " bytes.");
 
   Simulator::Destroy ();
+  
+  std::cout << "Time it took: " << finishTime - startTime << " ns   Message size: " << messageSize << " b" << std::endl; 
+  
   return 0;
 }
