@@ -4,7 +4,7 @@ Updated HomaL4Protocol-simple-test.cc to calculate the time in nanoseconds it ta
 Updated TcpL4Protocol-simple-test.cc to calculate the time in nanoseconds it takes to send message.
 
 How to setup:
-1) git clone https://github.com/mcorr23/HomaCIS4911.git
+1) git clone https://github.com/mcorr023/HomaCIS4911.git
 2) ./waf configure
 3) ./waf 
 
