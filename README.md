@@ -3,6 +3,9 @@ Nathan Nunez Update 4/12/2023:
 Updated HomaL4Protocol-simple-test.cc to calculate the time in nanoseconds it takes to send message (fixed an issue in the previous version that would throw an error when TcpL4Protocol-simple-test.cc was run).
 Updated TcpL4Protocol-simple-test.cc to calculate the time in nanoseconds it takes to send message.
 
+You need Ubuntu for this project. If you don't have it you can follow the instructions on this website (it works for Windows also):
+https://medium.com/tech-lounge/how-to-install-ubuntu-on-mac-using-virtualbox-3a26515aa869
+
 How to setup:
 1) git clone https://github.com/mcorr023/HomaCIS4911.git
 2) cd HomaCIS4911
