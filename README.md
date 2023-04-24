@@ -5,9 +5,10 @@ Updated TcpL4Protocol-simple-test.cc to calculate the time in nanoseconds it tak
 
 How to setup:
 1) git clone https://github.com/mcorr023/HomaCIS4911.git
-2) chmod u+x ./waf
-3) ./waf configure
-4) ./waf 
+2) cd HomaCIS4911
+3) chmod u+x ./waf
+4) ./waf configure
+5) ./waf 
 
 How to run HOMA:
 1) Change the size of the message to your liking: line 52 variable name "messageSize"
