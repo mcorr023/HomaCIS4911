@@ -18,6 +18,10 @@ How to run TCP:
 1) Change the size of the message to your liking: line 48 variable name "messageSize"
 2) ./waf --run scratch/TcpL4Protocol-simple-test
 
+If you have any issues try using:
+./waf clean
+You will need to repeat ./waf configure and ./waf but it should fix any simple issues.
+
 Maria Correa Update 4/4/2023:
 
 Updated HomaL4Protocol-simple-test.cc to parse a variable size of the message.
